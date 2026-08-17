@@ -1,0 +1,41 @@
+name: M3U Otomatik Guncelleyici
+
+on:
+  schedule:
+    # Her saat başı çalışır
+    - cron: '0 * * * *'
+  push:
+    paths:
+      # channels.txt veya update.py güncellendiğinde anında çalışır
+      - 'channels.txt'
+      - 'update.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repoyu Çek
+        uses: actions/checkout@v4
+
+      - name: Python 3.11 Kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Kütüphaneleri Yükle
+        run: pip install requests yt-dlp
+
+      - name: Scripti Çalıştır
+        run: python update.py
+
+      - name: Güncellemeleri Commit Et ve Push Yap
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@github.com"
+          git add playlist.m3u channels.txt
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Playlist ve channels.txt otomatik güncellendi" && git push)
