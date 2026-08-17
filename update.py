@@ -29,24 +29,26 @@ def resolve_stream_url(url):
     # 3. Duhnet / CNN Türk / Kanal D Altyapısı (API + Regex Çözücü)
     if "cnnturk" in url or "duhnet" in url:
         try:
-            # a) Doğrudan CNN Türk'ün canlı yayın servis API'sinden taze token'lı linki çekmeyi dene
-            api_url = "https://www.cnnturk.com/api/cnnvideo/media?id=62d6814670380e2cdc7c124c&isMobile=true"
+            # a) CNN Türk'ün güncel API'sinden taze token'lı linki çek
+            api_url = "https://www.cnnturk.com/api/cnn/canli-yayin"
             r_api = requests.get(api_url, headers=headers, timeout=5)
             if r_api.status_code == 200:
                 data = r_api.json()
-                # JSON içinde stream URL varsa onu döndür
-                if isinstance(data, dict) and "data" in data and "streamUrl" in data["data"]:
-                    return data["data"]["streamUrl"]
+                media = data.get("Media", {})
+                service_url = media.get("ServiceUrl", "")
+                secure_path = media.get("SecurePath", "")
+                
+                if service_url and secure_path:
+                    # https://live.duhnet.tv + /S2/HLS_LIVE/... birleşimi
+                    full_stream_url = service_url + secure_path
+                    return full_stream_url.replace("&amp;", "&")
 
             # b) API yanıt vermezse web sayfasını tara
             r = requests.get(url, headers=headers, timeout=10)
-            
-            # Token'lı duhnet m3u8 linki ara (?st= veya &st= içeren)
             match_token = re.search(r'(https?://[^\s"\'<>]*duhnet\.tv[^\s"\'<>]*\.m3u8\?[^\s"\'<>]+)', r.text)
             if match_token:
                 return match_token.group(1).replace("&amp;", "&")
 
-            # Token'sız yalın m3u8 linki ara
             match_plain = re.search(r'(https?://[^\s"\'<>]*duhnet\.tv[^\s"\'<>]*\.m3u8[^\s"\'<>]*)', r.text)
             if match_plain:
                 return match_plain.group(1).replace("&amp;", "&")
