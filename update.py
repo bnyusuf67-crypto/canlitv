@@ -31,7 +31,7 @@ def resolve_stream_url(url):
         try:
             # a) CNN Türk'ün güncel API'sinden taze token'lı linki çek
             api_url = "https://www.cnnturk.com/api/cnnvideo/media?id=62d6814670380e2cdc7c124c&isMobile=true"
-            r_api = requests.get(api_url, headers=headers, timeout=5)
+            r_api = requests.get(api_url, headers=headers, timeout=15)
             if r_api.status_code == 200:
                 data = r_api.json()
                 media = data.get("Media", {})
