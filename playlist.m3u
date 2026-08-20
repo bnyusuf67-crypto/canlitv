@@ -255,8 +255,14 @@ https://saran-live.ercdn.net/babytv/index.m3u8
 #EXTINF:-1 tvg-name="Disney Junior TV" tvg-logo="logo" group-title="Cocuk",Disney Junior TV
 https://saran-live.ercdn.net/disneyjunior/index.m3u8
 
+#EXTINF:-1 tvg-name="ATV Avrupa" tvg-logo="logo" group-title="Avrupa",ATV Avrupa
+https://flask-api-hls-atvavrupahdtrkvz-live.onrender.com/hls_stream/master.m3u8
+
 #EXTINF:-1 tvg-name="Euro D" tvg-logo="logo" group-title="Avrupa",Euro D
 http://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8
+
+#EXTINF:-1 tvg-name="Show Turk" tvg-logo="logo" group-title="Avrupa",Show Turk
+https://flask-stream-show-turk-cinerlive.onrender.com/hls_stream/master.m3u8
 
 #EXTINF:-1 tvg-name="Kanal Avrupa" tvg-logo="logo" group-title="Avrupa",Kanal Avrupa
 http://cdn-kanalavrupa.yayin.com.tr/kanalavrupa/index.m3u8
@@ -322,7 +328,7 @@ https://65.108.239.207/sinema/index.m3u8
 https://65.108.239.207/sinema2/index.m3u8
 
 #EXTINF:-1 tvg-name="CNN Turk" tvg-logo="logo" group-title="Haber",CNN Turk
-https://65.108.239.207/cnn/index.m3u8
+https://5.178.103.239:55/yt1/cnn.m3u8
 
 #EXTINF:-1 tvg-name="Cartoon Network" tvg-logo="logo" group-title="Cocuk",Cartoon Network
 https://65.108.239.207/cartoonnetwork/index.m3u8
