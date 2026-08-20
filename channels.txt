@@ -84,7 +84,9 @@ Discovery Channel | https://raw.githubusercontent.com/droidlive/dc/refs/heads/ma
 TRT-Cocuk | https://tv-trtcocuk.medya.trt.com.tr/master_1440.m3u8 | Cocuk | logo
 Baby TV | https://saran-live.ercdn.net/babytv/index.m3u8 | Cocuk | logo
 Disney Junior TV | https://saran-live.ercdn.net/disneyjunior/index.m3u8 | Cocuk | logo
+ATV Avrupa | https://flask-api-hls-atvavrupahdtrkvz-live.onrender.com/hls_stream/master.m3u8 | Avrupa | logo
 Euro D | http://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8 | Avrupa | logo
+Show Turk | https://flask-stream-show-turk-cinerlive.onrender.com/hls_stream/master.m3u8 | Avrupa | logo
 Kanal Avrupa | http://cdn-kanalavrupa.yayin.com.tr/kanalavrupa/index.m3u8 | Avrupa | logo
 BBC Earth | http://65.108.239.207/bbc/index.m3u8 | Belgesel | logo
 Discovery ID | http://65.108.239.207/discs/index.m3u8 | Belgesel | logo
@@ -107,7 +109,7 @@ SinemaTV Aksiyon | https://65.108.239.207/sinemaaksiyon/index.m3u8 | Sinema-Dizi
 SinemaTV | https://65.108.239.207/sinema/index.m3u8 | Sinema-Dizi | logo
 SinemaTV 2 | https://65.108.239.207/sinema2/index.m3u8 | Sinema-Dizi | logo
 SinemaTV Komedi|SinemaTV|https://65.108.239.207/sinemakomedi/index.m3u8|Sinema-Dizi|logo|Sinema-Dizi|logo
-CNN Turk | https://65.108.239.207/cnn/index.m3u8 | Haber | logo
+CNN Turk | https://5.178.103.239:55/yt1/cnn.m3u8 | Haber | logo
 Cartoon Network | https://65.108.239.207/cartoonnetwork/index.m3u8 | Cocuk | logo
 Yeşilçam Tv | https://i41.ozelip.com:3764/hybrid/play.m3u8 | Sinema-Dizi | logo
 TV4 | https://turkmedya-live.ercdn.net/tv4/tv4_1080p.m3u8 | Sinema-Dizi | logo
